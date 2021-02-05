@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE pedido SYSTEM "pedidos.dtd">
+
+<pedido>
+    <sucursales codPedido="P9852145">
+        <direcciones>calle falsa 123</direcciones>
+        <nombreTrabajador>Mariano Rajoy</nombreTrabajador>
+        <fechaPedido>12-06-2020</fechaPedido>
+        <observacionesPedido>urgente</observacionesPedido>
+        <articulo codArticulo="ODN-597">
+            <unidadesPedidas>3</unidadesPedidas>
+            <precioUnidad>7</precioUnidad>
+            <observacionesArt>fragil</observacionesArt>
+            <revision>4</revision>
+        </articulo>
+    </sucursales>
+</pedido>

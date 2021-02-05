@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="pedido" type="datosPedido"/>
+    <xsd:complexType name="datosPedido">
+        <xsd:sequence>
+            <xsd:element name="sucursales" type="datosSucursales" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="datosSucursales">
+        <xsd:sequence>
+            <xsd:element name="direcciones" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="nombreTrabajador" type="xsd:string" />
+            <xsd:element name="fechaPedido" type="xsd:date" />
+            <xsd:element name="observacionesPedido" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="articulo" type="datosArticulo" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="codPedido" type="tipoCodigo" use="required"/>
+    </xsd:complexType>
+    <xsd:simpleType name="codPedido">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Za-z]([A-Za-z0-9]){7}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="datosClientes">
+        <xsd:sequence>
+            <xsd:element name="unidadesPedidas" type="integer"/>
+            <xsd:element name="precioUnidad" type="integer"/>
+            <xsd:element name="observacionesArt" type="xsd:string"/>
+            <xsd:element name="revision" type="string"/>
+        </xsd:sequence>
+        <xsd:attribute name="codArticulo" type="tipoCodigo" use="required"/>
+    </xsd:complexType>
+    <xsd:simpleType name="codArticulo">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[A-Z]{3}-[0-9]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
